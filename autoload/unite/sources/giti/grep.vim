@@ -35,7 +35,7 @@ let s:source = {
 \}
 
 function! s:source.gather_candidates(args, context) "{{{
-  let pattern = giti#input('Pattern:')
+  let pattern = len(a:args) > 0 ? a:args[0] : giti#input('Pattern:')
 
   call unite#print_message('[giti/grep]')
 
